@@ -20,14 +20,14 @@ class SignUpPage extends StatelessWidget {
     }
 
     Widget inputSection() {
-      Widget emailInput() {
+      Widget nameInput() {
         return Container(
-          margin: EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.only(bottom: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Full Name'),
-              SizedBox(height: 6),
+              const Text('Full Name'),
+              const SizedBox(height: 6),
               TextFormField(
                 cursorColor: kBlackColor,
                 decoration: InputDecoration(
@@ -37,7 +37,7 @@ class SignUpPage extends StatelessWidget {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(defaultRadius),
-                    borderSide: BorderSide(color: kPrimaryColor),
+                    borderSide: BorderSide(color: kPrimaryColor, width: 2),
                   ),
                 ),
               )
@@ -46,14 +46,140 @@ class SignUpPage extends StatelessWidget {
         );
       }
 
+      Widget emailInput() {
+        return Container(
+          margin: const EdgeInsets.only(bottom: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Email Address'),
+              const SizedBox(height: 6),
+              TextFormField(
+                cursorColor: kBlackColor,
+                decoration: InputDecoration(
+                  hintText: 'Your email address',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                    borderSide: BorderSide(color: kPrimaryColor, width: 2),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      }
+
+      Widget passwordInput() {
+        return Container(
+          margin: const EdgeInsets.only(bottom: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Password'),
+              const SizedBox(height: 6),
+              TextFormField(
+                obscureText: true,
+                cursorColor: kBlackColor,
+                decoration: InputDecoration(
+                  hintText: 'Your password',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                    borderSide: BorderSide(color: kPrimaryColor, width: 2),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      }
+
+      Widget hobbyInput() {
+        return Container(
+          margin: const EdgeInsets.only(bottom: 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Email Hobby'),
+              const SizedBox(height: 6),
+              TextFormField(
+                cursorColor: kBlackColor,
+                decoration: InputDecoration(
+                  hintText: 'Your hobby',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                    borderSide: BorderSide(color: kPrimaryColor, width: 2),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      }
+
+      Widget submitButton() {
+        return Container(
+          width: double.infinity,
+          height: 55,
+          child: TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: kPrimaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(defaultRadius),
+              ),
+            ),
+            onPressed: () {},
+            child: Text(
+              'Get Started',
+              style: whiteTextStyle.copyWith(
+                fontSize: 18,
+                fontWeight: medium,
+              ),
+            ),
+          ),
+        );
+      }
+
       return Container(
-        margin: EdgeInsets.only(top: 30),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        margin: const EdgeInsets.only(top: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         decoration: BoxDecoration(
             color: kWhiteColor,
             borderRadius: BorderRadius.circular(defaultRadius)),
         child: Column(
-          children: [emailInput()],
+          children: [
+            nameInput(),
+            emailInput(),
+            passwordInput(),
+            hobbyInput(),
+            submitButton(),
+          ],
+        ),
+      );
+    }
+
+    Widget tacButton() {
+      return Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(
+          top: 50,
+          bottom: 73,
+        ),
+        child: Text(
+          'Term And Condition',
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+            decoration: TextDecoration.underline,
+          ),
         ),
       );
     }
@@ -63,7 +189,11 @@ class SignUpPage extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-          children: [title(), inputSection()],
+          children: [
+            title(),
+            inputSection(),
+            tacButton(),
+          ],
         ),
       ),
     );
