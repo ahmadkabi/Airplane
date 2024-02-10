@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
 
-class GetStarted extends StatelessWidget {
-  const GetStarted({super.key});
+class GetStartedPage extends StatelessWidget {
+  const GetStartedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
