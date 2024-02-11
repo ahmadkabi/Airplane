@@ -46,7 +46,7 @@ Start Fly Now
                         ),
                       ),
                       Text(
-                        "Kezia Anne",
+                        "Achmad Ka'bi",
                         style: whiteTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: medium,
@@ -93,7 +93,7 @@ Start Fly Now
 
     Widget title() {
       return Container(
-        margin: EdgeInsets.only(top: 80),
+        margin: const EdgeInsets.only(top: 80),
         child: Text(
           'Big Bonus 🎉',
           style: blackTextStyle.copyWith(
@@ -122,9 +122,11 @@ Start Fly Now
       return Container(
         height: 55,
         width: 220,
-        margin: EdgeInsets.only(top: 50),
+        margin: const EdgeInsets.only(top: 50),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/main');
+          },
           style: TextButton.styleFrom(
               backgroundColor: kPrimaryColor,
               shape: RoundedRectangleBorder(
