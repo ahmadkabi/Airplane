@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/destination_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
@@ -44,11 +45,42 @@ class HomePage extends StatelessWidget {
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage('assets/image_profile.png')
-                )
+                  image: AssetImage('assets/image_profile.png'),
+                ),
               ),
-            )
+            ),
           ],
+        ),
+      );
+    }
+
+    Widget popularDestination() {
+      return Container(
+        margin: const EdgeInsets.only(top: 30),
+        child: const SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              DestinationCard(
+                  imageUrl: 'assets/image_destination1.png',
+                  name: 'Lake Ciliwung',
+                  city: 'Tangerang',
+                  rating: 4.3,
+              ),
+              DestinationCard(
+                  imageUrl: 'assets/image_destination2.png',
+                  name: 'Hill Henko',
+                  city: 'South Korea',
+                  rating: 3.0,
+              ),
+              DestinationCard(
+                  imageUrl: 'assets/image_destination3.png',
+                  name: 'Warung Mantap',
+                  city: 'Cimindi',
+                  rating: 4.5,
+              ),
+            ],
+          ),
         ),
       );
     }
@@ -56,6 +88,7 @@ class HomePage extends StatelessWidget {
     return ListView(
       children: [
         header(),
+        popularDestination(),
       ],
     );
   }
