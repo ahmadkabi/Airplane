@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -31,6 +30,7 @@ Start Fly Now
           ],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -61,14 +61,84 @@ Start Fly Now
                   height: 24,
                   margin: const EdgeInsets.only(right: 6),
                   decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/icon_plane.png')
-                    )
+                      image: DecorationImage(
+                          image: AssetImage('assets/icon_plane.png'))),
+                ),
+                Text(
+                  'Pay',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
                   ),
-                )
+                ),
               ],
-            )
+            ),
+            const SizedBox(height: 41),
+            Text('Balance',
+                style: whiteTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: light,
+                )),
+            Text(
+              'IDR 280.000.000',
+              style: whiteTextStyle.copyWith(
+                fontSize: 26,
+                fontWeight: medium,
+              ),
+            ),
           ],
+        ),
+      );
+    }
+
+    Widget title() {
+      return Container(
+        margin: EdgeInsets.only(top: 80),
+        child: Text(
+          'Big Bonus 🎉',
+          style: blackTextStyle.copyWith(
+            fontSize: 32,
+            fontWeight: semiBold,
+          ),
+        ),
+      );
+    }
+
+    Widget subtitle() {
+      return Container(
+        margin: const EdgeInsets.only(top: 10),
+        child: Text(
+          'We give you early credit so that\n you can buy a flight ticket',
+          textAlign: TextAlign.center,
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+          ),
+        ),
+      );
+    }
+
+    Widget startButton() {
+      return Container(
+        height: 55,
+        width: 220,
+        margin: EdgeInsets.only(top: 50),
+        child: TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+              backgroundColor: kPrimaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(
+                  defaultRadius,
+                ),
+              )),
+          child: Text(
+            'Start Fly Now',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+            ),
+          ),
         ),
       );
     }
@@ -80,16 +150,9 @@ Start Fly Now
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             bonusCard(),
-            Text(
-              'Big Bonus',
-              style:
-                  blackTextStyle.copyWith(fontSize: 32, fontWeight: semiBold),
-            ),
-            Text(
-              'We give you early credit so that you can buy a flight ticket',
-              textAlign: TextAlign.center,
-              style: blackTextStyle.copyWith(fontSize: 16, fontWeight: light),
-            ),
+            title(),
+            subtitle(),
+            startButton(),
           ],
         ),
       ),
