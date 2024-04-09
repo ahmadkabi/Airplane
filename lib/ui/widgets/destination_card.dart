@@ -1,3 +1,4 @@
+import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -18,7 +19,14 @@ class DestinationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DetailPage())
+        );
+      },
+      child: Container(
         width: 200,
         height: 323,
         margin: EdgeInsets.only(left: defaultMargin),
@@ -104,6 +112,7 @@ class DestinationCard extends StatelessWidget {
             )
           ],
         ),
-      );
+      ),
+    );
   }
 }

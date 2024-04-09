@@ -92,6 +92,7 @@ class HomePage extends StatelessWidget {
           top: 30,
           right: defaultMargin,
           left: defaultMargin,
+          bottom: 140,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,32 +105,29 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            const LatestDestination(
+            const DestinationTile(
               imageUrl: 'assets/image_destination1.png',
               name: "Danau Toba",
               city: "Medan",
               rating: 5.0,
             ),
-            const LatestDestination(
+            const DestinationTile(
               imageUrl: 'assets/image_destination1.png',
               name: "Danau Toba",
               city: "Medan",
               rating: 5.0,
             ),
-            const LatestDestination(
+            const DestinationTile(
               imageUrl: 'assets/image_destination1.png',
               name: "Danau Toba",
               city: "Medan",
               rating: 5.0,
             ),
-            const LatestDestination(
+            const DestinationTile(
               imageUrl: 'assets/image_destination1.png',
               name: "Danau Toba",
               city: "Medan",
               rating: 5.0,
-            ),
-            const SizedBox(
-              height: 200,
             )
           ],
         ),
