@@ -2,7 +2,7 @@ import 'package:airplane/ui/widgets/destination_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
-import '../widgets/latest_destination.dart';
+import '../widgets/destination_tile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -112,9 +112,9 @@ class HomePage extends StatelessWidget {
               rating: 5.0,
             ),
             const DestinationTile(
-              imageUrl: 'assets/image_destination1.png',
-              name: "Danau Toba",
-              city: "Medan",
+              imageUrl: 'assets/image_destination2.png',
+              name: "Wahana",
+              city: "Kertosono",
               rating: 5.0,
             ),
             const DestinationTile(
