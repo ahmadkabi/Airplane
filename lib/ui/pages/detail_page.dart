@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/photo_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
@@ -123,7 +124,35 @@ class DetailPage extends StatelessWidget {
                   ),
                   Text(
                     "Berada di jalur jalan provinsi yang menghubungkan Denpasar. Singaraja serta letaknya yang dekat dengan Kebun Raya Eka Karya menjadikan tempat Bali.",
-                    style: blackTextStyle.copyWith(height: 2.2),
+                    style: blackTextStyle.copyWith(height: 2),
+                  ),
+
+                  /** Note: Photos*/
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Photos",
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Row(
+                    children: [
+                      PhotoItem(
+                        imageUrl: 'assets/image_photo1.png',
+                      ),
+                      PhotoItem(
+                        imageUrl: 'assets/image_photo2.png',
+                      ),
+                      PhotoItem(
+                        imageUrl: 'assets/image_photo3.png',
+                      ),
+                    ],
                   )
                 ],
               ),
