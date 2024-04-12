@@ -1,6 +1,9 @@
+import 'package:airplane/ui/widgets/custom_button.dart';
+import 'package:airplane/ui/widgets/interest_item.dart';
 import 'package:airplane/ui/widgets/photo_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../../shared/theme.dart';
 
 class DetailPage extends StatelessWidget {
@@ -153,18 +156,88 @@ class DetailPage extends StatelessWidget {
                         imageUrl: 'assets/image_photo3.png',
                       ),
                     ],
-                  )
+                  ),
+
+                  /** Note: Photos*/
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Interests",
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Row(
+                    children: [
+                      InterestItem(text: "text"),
+                      InterestItem(text: "text"),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Row(
+                    children: [
+                      InterestItem(text: "text"),
+                      InterestItem(text: "text"),
+                    ],
+                  ),
                 ],
               ),
             ),
+
+            /** Note: Price & Book Button*/
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(vertical: 30),
+              child: Row(
+                children: [
+                  /** Note: Price*/
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IDR 2.500.000',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 18,
+                            fontWeight: medium,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Per Orang',
+                          style: greyTextStyle.copyWith(
+                            fontWeight: light,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  /** Note: Book Button*/
+                  CustomButton(title: 'Book Now', onPressed: () {}, width: 170,)
+
+                ],
+              ),
+            )
           ],
         ),
       );
     }
 
     return Scaffold(
-      body: Stack(
-        children: [backgroundImage(), customShadow(), content()],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [backgroundImage(), customShadow(), content()],
+        ),
       ),
     );
   }
