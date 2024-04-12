@@ -2,6 +2,9 @@ import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/seat_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+import '../widgets/custom_button.dart';
 
 class ChooseSeatPage extends StatelessWidget {
   const ChooseSeatPage({super.key});
@@ -258,7 +261,68 @@ class ChooseSeatPage extends StatelessWidget {
                 SeatItem(state: 2),
               ],
             ),
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Your seat',
+                  style: greyTextStyle.copyWith(
+                    fontWeight: light,
+                  ),
+                ),
+                Text(
+                  'A3, B3',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Total',
+                  style: greyTextStyle.copyWith(
+                    fontWeight: light,
+                  ),
+                ),
+                Text(
+                  'IDR 540.000',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: semiBold,
+                    color: kPrimaryColor,
+                  ),
+                )
+              ],
+            ),
           ],
+        ),
+      );
+    }
+
+    Widget checkoutButton() {
+      return CustomButton(
+        title: 'Continue to Checkout',
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChooseSeatPage(),
+            ),
+          );
+        },
+        margin: EdgeInsets.only(
+          top: 30,
+          bottom: 40,
         ),
       );
     }
@@ -273,6 +337,7 @@ class ChooseSeatPage extends StatelessWidget {
           title(),
           seatStatus(),
           selectSeat(),
+          checkoutButton(),
         ],
       ),
     );
