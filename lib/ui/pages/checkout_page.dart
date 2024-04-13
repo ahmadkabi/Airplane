@@ -1,4 +1,5 @@
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/ui/pages/SuccessPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -306,7 +307,7 @@ class CheckoutPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ChooseSeatPage(),
+                    builder: (context) => SuccessPage(),
                   ),
                 );
               },
