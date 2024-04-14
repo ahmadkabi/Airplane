@@ -1,4 +1,6 @@
 import 'package:airplane/ui/pages/home_page.dart';
+import 'package:airplane/ui/pages/transaction_page.dart';
+import 'package:airplane/ui/pages/wallet_page.dart';
 import 'package:airplane/ui/widgets/custom_bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
@@ -7,7 +9,7 @@ class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
   Widget buildContent() {
-    return HomePage();
+    return WalletPage();
   }
 
   Widget bottomNavigation() {

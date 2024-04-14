@@ -20,7 +20,7 @@ class SuccessCheckoutPage extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 80),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/image_calendar'),
+                  image: AssetImage('assets/image_success.png'),
                 ),
               ),
             ),
@@ -45,7 +45,6 @@ class SuccessCheckoutPage extends StatelessWidget {
             CustomButton(
               margin: EdgeInsets.only(
                 top: 50,
-                bottom: 150,
               ),
               title: 'My Bookings',
               width: 220,

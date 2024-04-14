@@ -1,12 +1,8 @@
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/success_checkout_page.dart';
 import 'package:airplane/ui/widgets/booking_detail_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import '../widgets/custom_button.dart';
-import 'choose_seat_page.dart';
 
 class CheckoutPage extends StatelessWidget {
   const CheckoutPage({super.key});
