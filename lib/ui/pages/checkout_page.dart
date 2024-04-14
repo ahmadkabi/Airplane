@@ -1,5 +1,6 @@
 import 'package:airplane/shared/theme.dart';
-import 'package:airplane/ui/pages/SuccessPage.dart';
+import 'package:airplane/ui/pages/success_checkout_page.dart';
+import 'package:airplane/ui/widgets/booking_detail_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -112,7 +113,9 @@ class CheckoutPage extends StatelessWidget {
                       Text(
                         'Lake Ciliwung',
                         style: blackTextStyle.copyWith(
-                            fontSize: 18, fontWeight: semiBold),
+                          fontSize: 18,
+                          fontWeight: semiBold,
+                        ),
                       ),
                       Text(
                         'Tangerang',
@@ -147,63 +150,25 @@ class CheckoutPage extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: bold,
                 )),
-            SizedBox(
-              height: 10,
+            BookingDetailItem(
+              title: 'title',
+              valueText: 'subtitle',
+              valueColor: kBlackColor,
             ),
-            Row(
-              children: [
-                Container(
-                  height: 16,
-                  width: 16,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/icon_check.png'),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 6,
-                ),
-                Expanded(
-                  child: Text(
-                    'Traveler',
-                    style: blackTextStyle,
-                  ),
-                ),
-                Text(
-                  '2 person',
-                  style: blackTextStyle.copyWith(fontWeight: bold),
-                ),
-              ],
+            BookingDetailItem(
+              title: 'title',
+              valueText: 'subtitle',
+              valueColor: kRedColor,
             ),
-            SizedBox(
-              height: 16,
+            BookingDetailItem(
+              title: 'title',
+              valueText: 'subtitle',
+              valueColor: kGreenColor,
             ),
-            Row(
-              children: [
-                Container(
-                  height: 16,
-                  width: 16,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/icon_check.png'),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 6,
-                ),
-                Expanded(
-                  child: Text(
-                    'Traveler',
-                    style: blackTextStyle,
-                  ),
-                ),
-                Text(
-                  '2 person',
-                  style: blackTextStyle.copyWith(fontWeight: bold),
-                ),
-              ],
+            BookingDetailItem(
+              title: 'title',
+              valueText: 'subtitle',
+              valueColor: kPrimaryColor,
             ),
           ],
         ),
@@ -244,19 +209,25 @@ class CheckoutPage extends StatelessWidget {
                     horizontal: 20,
                   ),
                   decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/image_card.png')),
                     borderRadius: BorderRadius.circular(18),
-                    color: Colors.red,
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
                         height: 24,
                         width: 24,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage('assets/image_plane.png'),
+                            image: AssetImage('assets/icon_plane.png'),
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        width: 6,
                       ),
                       Text(
                         'Pay',
@@ -275,9 +246,10 @@ class CheckoutPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'IDR 80.400.000',
+                        'IDR 80.400.000 ',
                         style: blackTextStyle.copyWith(
                             fontSize: 18, fontWeight: bold),
+                        overflow: TextOverflow.ellipsis,
                       ),
                       Text(
                         'Current Balance',
@@ -307,7 +279,7 @@ class CheckoutPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SuccessPage(),
+                    builder: (context) => SuccessCheckoutPage(),
                   ),
                 );
               },
@@ -317,10 +289,7 @@ class CheckoutPage extends StatelessWidget {
             ),
             Text(
               'Terms and Conditions',
-              style: greyTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: light
-              ),
+              style: greyTextStyle.copyWith(fontSize: 16, fontWeight: light),
             ),
             SizedBox(
               height: 30,
