@@ -1,4 +1,4 @@
-package com.example.airplane
+package com.softcomfy.airplane
 
 import io.flutter.embedding.android.FlutterActivity
 
