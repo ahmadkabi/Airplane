@@ -1,3 +1,4 @@
+import 'package:airplane/cubit/auth_cubit.dart';
 import 'package:airplane/cubit/page_cubit.dart';
 import 'package:airplane/ui/pages/bonus_page.dart';
 import 'package:airplane/ui/pages/detail_page.dart';
@@ -10,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
@@ -30,13 +31,16 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => PageCubit(),
         ),
+        BlocProvider(
+          create: (context) => AuthCubit(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
           '/': (context) => const SplashPage(),
           '/get-started': (context) => const GetStartedPage(),
-          '/sign-up': (context) => const SignUpPage(),
+          '/sign-up': (context) => SignUpPage(),
           '/bonus': (context) => const BonusPage(),
           '/main': (context) => const MainPage(),
         },
