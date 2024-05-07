@@ -7,12 +7,6 @@ import '../widgets/custom_button.dart';
 class BonusPage extends StatelessWidget {
   const BonusPage({super.key});
 
-/*
-*
-*
-
-Start Fly Now
-* */
   @override
   Widget build(BuildContext context) {
     Widget bonusCard() {
