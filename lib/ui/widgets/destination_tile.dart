@@ -1,20 +1,12 @@
+import 'package:airplane/models/destination_model.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 import '../pages/detail_page.dart';
 
 class DestinationTile extends StatelessWidget {
-  final String imageUrl;
-  final String name;
-  final String city;
-  final double rating;
+  final DestinationModel destination;
 
-  const DestinationTile({
-    super.key,
-    required this.imageUrl,
-    required this.name,
-    required this.city,
-    required this.rating,
-  });
+  const DestinationTile(this.destination, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +30,7 @@ class DestinationTile extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
                 image: DecorationImage(
-                  image: AssetImage(imageUrl),
+                  image: NetworkImage(destination.imageUrl),
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -49,7 +41,7 @@ class DestinationTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    destination.name,
                     style: blackTextStyle.copyWith(
                       fontSize: 18,
                       fontWeight: medium,
@@ -58,7 +50,7 @@ class DestinationTile extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    city,
+                    destination.city,
                     style: greyTextStyle.copyWith(
                       fontSize: 14,
                       fontWeight: light,
@@ -78,7 +70,7 @@ class DestinationTile extends StatelessWidget {
             ),
             const SizedBox(width: 3),
             Text(
-              rating.toString(),
+              destination.rating.toString(),
               style: blackTextStyle.copyWith(
                 fontSize: 14,
                 fontWeight: medium,

@@ -1,30 +1,19 @@
 import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:flutter/material.dart';
+import '../../models/destination_model.dart';
 import '../../shared/theme.dart';
 
 class DestinationCard extends StatelessWidget {
+  final DestinationModel destination;
 
-  final String imageUrl;
-  final String name;
-  final String city;
-  final double rating;
-
-  const DestinationCard({
-    super.key,
-    required this.imageUrl,
-    required this.name,
-    required this.city,
-    required this.rating,
-  });
+  const DestinationCard(this.destination, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => DetailPage())
-        );
+            context, MaterialPageRoute(builder: (context) => DetailPage()));
       },
       child: Container(
         width: 200,
@@ -44,7 +33,7 @@ class DestinationCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
                 image: DecorationImage(
-                  image: AssetImage(imageUrl),
+                  image: NetworkImage(destination.imageUrl),
                 ),
               ),
               child: Align(
@@ -73,7 +62,7 @@ class DestinationCard extends StatelessWidget {
                       ),
                       const SizedBox(width: 3),
                       Text(
-                        rating.toString(),
+                        destination.rating.toString(),
                         style: blackTextStyle.copyWith(
                           fontSize: 14,
                           fontWeight: medium,
@@ -91,7 +80,7 @@ class DestinationCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    destination.name,
                     overflow: TextOverflow.ellipsis,
                     style: blackTextStyle.copyWith(
                       fontSize: 18,
@@ -100,7 +89,7 @@ class DestinationCard extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    city,
+                    destination.city,
                     overflow: TextOverflow.ellipsis,
                     style: greyTextStyle.copyWith(
                       fontSize: 15,
