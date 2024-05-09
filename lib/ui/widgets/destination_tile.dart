@@ -13,7 +13,9 @@ class DestinationTile extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => DetailPage()));
+          context,
+          MaterialPageRoute(builder: (context) => DetailPage(destination)),
+        );
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 16),
