@@ -9,7 +9,6 @@ final class DestinationInitial extends DestinationState {
   List<Object> get props => [];
 }
 
-
 class DestinationLoading extends DestinationState {
   @override
   List<Object?> get props => [];
