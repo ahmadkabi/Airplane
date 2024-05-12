@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import '../../cubit/auth_cubit.dart';
+import '../../cubit/transaction_cubit.dart';
 import '../widgets/custom_button.dart';
 
 class CheckoutPage extends StatelessWidget {
@@ -305,22 +306,50 @@ class CheckoutPage extends StatelessWidget {
     }
 
     Widget payNowButton() {
+      return BlocConsumer<TransactionCubit, TransactionState>(
+        listener: (context, state) {
+          if (state is TransactionSuccess) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SuccessCheckoutPage(),
+              ),
+            );
+          } else if (state is TransactionFailed) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                backgroundColor: kRedColor,
+                content: Text(state.error),
+              ),
+            );
+          }
+        },
+        builder: (context, state) {
+          if (state is TransactionLoading) {
+            return Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(top: 30),
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          return CustomButton(
+            title: 'Pay Now',
+            width: double.infinity,
+            onPressed: () {
+              context.read<TransactionCubit>().createTransaction(transaction);
+            },
+            margin: EdgeInsets.only(top: 30),
+          );
+        },
+      );
+    }
+
+    Widget tacButton() {
       return Container(
-        margin: EdgeInsets.only(top: 30),
         child: Column(
           children: [
-            CustomButton(
-              title: 'Pay Now',
-              width: double.infinity,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SuccessCheckoutPage(),
-                  ),
-                );
-              },
-            ),
+
             SizedBox(
               height: 30,
             ),
@@ -347,6 +376,7 @@ class CheckoutPage extends StatelessWidget {
           bookingDetails(),
           paymentDetail(),
           payNowButton(),
+          tacButton(),
         ],
       ),
     );
