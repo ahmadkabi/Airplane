@@ -15,12 +15,12 @@ class TransactionLoading extends TransactionState {
 }
 
 class TransactionSuccess extends TransactionState {
-  // final List<TransactionModel> transactions;
-  //
-  // TransactionSuccess(this.transactions);
+  final List<TransactionModel> transactions;
+
+  TransactionSuccess(this.transactions);
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [transactions];
 }
 
 class TransactionFailed extends TransactionState {
