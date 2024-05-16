@@ -1,5 +1,5 @@
 import 'package:airplane/models/transaction_model.dart';
-import 'package:airplane/shared/theme.dart';
+import 'package:airplane/common/theme.dart';
 import 'package:airplane/ui/pages/success_checkout_page.dart';
 import 'package:airplane/ui/widgets/booking_detail_item.dart';
 import 'package:flutter/material.dart';

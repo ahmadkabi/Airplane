@@ -2,7 +2,7 @@ import 'package:airplane/models/transaction_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 import 'booking_detail_item.dart';
 
 class TransactionCard extends StatelessWidget {

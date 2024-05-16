@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 
 class DetailPage extends StatelessWidget {
   final DestinationModel destination;

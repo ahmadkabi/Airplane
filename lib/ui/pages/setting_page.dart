@@ -4,7 +4,7 @@ import 'package:airplane/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});

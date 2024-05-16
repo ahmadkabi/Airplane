@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 
 class BookingDetailItem extends StatelessWidget {
   final String title;

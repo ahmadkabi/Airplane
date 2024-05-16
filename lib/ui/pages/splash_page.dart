@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:airplane/cubit/auth_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashPage extends StatefulWidget {

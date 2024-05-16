@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../cubit/auth_cubit.dart';
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});

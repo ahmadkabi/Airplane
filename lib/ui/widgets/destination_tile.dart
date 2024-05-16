@@ -1,6 +1,6 @@
 import 'package:airplane/models/destination_model.dart';
 import 'package:flutter/material.dart';
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 import '../pages/detail_page.dart';
 
 class DestinationTile extends StatelessWidget {

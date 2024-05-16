@@ -1,5 +1,5 @@
 import 'package:airplane/cubit/transaction_cubit.dart';
-import 'package:airplane/shared/theme.dart';
+import 'package:airplane/common/theme.dart';
 import 'package:airplane/ui/widgets/transaction_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

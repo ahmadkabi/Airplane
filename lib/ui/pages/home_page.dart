@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../cubit/destination_cubit.dart';
 import '../../models/destination_model.dart';
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 import '../widgets/destination_tile.dart';
 
 class HomePage extends StatefulWidget {

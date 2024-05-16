@@ -1,7 +1,7 @@
 import 'package:airplane/cubit/seat_cubit.dart';
 import 'package:airplane/models/destination_model.dart';
 import 'package:airplane/models/transaction_model.dart';
-import 'package:airplane/shared/theme.dart';
+import 'package:airplane/common/theme.dart';
 import 'package:airplane/ui/pages/checkout_page.dart';
 import 'package:airplane/ui/widgets/seat_item.dart';
 import 'package:flutter/cupertino.dart';

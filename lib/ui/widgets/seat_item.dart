@@ -2,7 +2,7 @@ import 'package:airplane/cubit/seat_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 
 class SeatItem extends StatelessWidget {
   /// NOTE

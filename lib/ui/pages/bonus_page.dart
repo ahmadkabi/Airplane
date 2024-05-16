@@ -1,7 +1,7 @@
 import 'package:airplane/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../shared/theme.dart';
+import '../../common/theme.dart';
 import '../widgets/custom_button.dart';
 
 class BonusPage extends StatelessWidget {
