@@ -3,9 +3,7 @@ import 'package:airplane/ui/pages/choose_seat_page.dart';
 import 'package:airplane/ui/widgets/custom_button.dart';
 import 'package:airplane/ui/widgets/interest_item.dart';
 import 'package:airplane/ui/widgets/photo_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import '../../common/theme.dart';
 
