@@ -52,8 +52,8 @@ class DetailPage extends StatelessWidget {
             Container(
               height: 24,
               width: 108,
-              margin: EdgeInsets.only(top: 30),
-              decoration: BoxDecoration(
+              margin: const EdgeInsets.only(top: 30),
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/icon_emblem.png'))),
             ),
@@ -61,7 +61,7 @@ class DetailPage extends StatelessWidget {
             /** Note: Title*/
             // last here
             Container(
-              margin: EdgeInsets.only(top: 256),
+              margin: const EdgeInsets.only(top: 256),
               child: Row(
                 children: [
                   Expanded(
@@ -109,8 +109,8 @@ class DetailPage extends StatelessWidget {
             /** Note: Description*/
             Container(
               width: double.infinity,
-              margin: EdgeInsets.only(top: 30),
-              padding: EdgeInsets.symmetric(
+              margin: const EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.symmetric(
                 vertical: 30,
                 horizontal: 20,
               ),
@@ -126,7 +126,7 @@ class DetailPage extends StatelessWidget {
                       fontWeight: semiBold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   Text(
@@ -135,7 +135,7 @@ class DetailPage extends StatelessWidget {
                   ),
 
                   /** Note: Photos*/
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
@@ -145,10 +145,10 @@ class DetailPage extends StatelessWidget {
                       fontWeight: semiBold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
-                  Row(
+                  const Row(
                     children: [
                       PhotoItem(
                         imageUrl: 'assets/image_photo1.png',
@@ -163,7 +163,7 @@ class DetailPage extends StatelessWidget {
                   ),
 
                   /** Note: Photos*/
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
@@ -173,19 +173,19 @@ class DetailPage extends StatelessWidget {
                       fontWeight: semiBold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
-                  Row(
+                  const Row(
                     children: [
                       InterestItem(text: "text"),
                       InterestItem(text: "text"),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
-                  Row(
+                  const Row(
                     children: [
                       InterestItem(text: "text"),
                       InterestItem(text: "text"),
@@ -198,7 +198,7 @@ class DetailPage extends StatelessWidget {
             /** Note: Price & Book Button*/
             Container(
               width: double.infinity,
-              margin: EdgeInsets.symmetric(vertical: 30),
+              margin: const EdgeInsets.symmetric(vertical: 30),
               child: Row(
                 children: [
                   /** Note: Price*/
@@ -217,7 +217,7 @@ class DetailPage extends StatelessWidget {
                             fontWeight: medium,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
